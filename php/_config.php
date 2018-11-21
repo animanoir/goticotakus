@@ -1,4 +1,6 @@
 <?php
+// Activa el outputbuffer
+ob_start();
 // Pone la zona horario por default
 date_default_timezone_set('America/Mexico_City');
 
@@ -17,4 +19,6 @@ if ($db_link === false) {
 } else {
     // echo 'Conexión a la base de datos satisfatoria.';
 }
+// Nombre del sitio
+define('NOMBRESITIO', 'Góticotakus');
 ?>
