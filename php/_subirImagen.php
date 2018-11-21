@@ -25,7 +25,7 @@ if (isset($_POST['subir'])) {
             $_SESSION['avatar_cargado'] =
                 '<div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            Se cargó exitosamente tu avatar.
+            Imposible, pero se cargó exitosamente tu nuevo avatar.
             </div>';
             $_SESSION['avatar_img'] = $nombrea;
             header('Location: ../home.php');
