@@ -9,16 +9,17 @@ if (isset($_POST['login'])) {
         $mantra = htmlentities(mysqli_real_escape_string($db_link, ($_POST['mantra'])));
 
         // Busca este usuario en la bd.
-        $query_usuario = mysqli_query($db_link, "SELECT id, alias, mantra FROM usuarios WHERE alias = '$alias'");
+        $query_usuario = mysqli_query($db_link, "SELECT id, alias, mantra, avatar FROM usuarios WHERE alias = '$alias'");
         // Guarda dentro de una variable la fila del usuario.
         $row = mysqli_fetch_array($query_usuario, MYSQLI_ASSOC);
         $row_hash = $row['mantra'];
+        $avatar = $row['avatar'];
 
         if(password_verify($mantra, $row_hash)){
             $_SESSION['loggedin'] = true;
             $_SESSION['alias'] = $row['alias'];
-            $_SESSION['start'] = time();
-            $_SESSION['expire'] = $_SESSION['start'] + (1 * 60);
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['avatar_img'] = $avatar;
             header("Location: ../../home.php");
             exit();
         }else{

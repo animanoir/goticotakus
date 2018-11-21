@@ -17,6 +17,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 centrar-div">
+            <div class="text-center">
+                    <img src="css/assets/miku.gif" alt="Miku" >
+                </div>
                 <div class="text-center">
                     <h1 class="display-1 text-white"><span><b>G</b></span>ótic<span><b>o</b></span>takus</h1>
                 </div>

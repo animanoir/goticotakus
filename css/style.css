@@ -17,3 +17,13 @@ body {
     text-decoration: none;
     font-family: 'Muli', sans-serif;
 }
+
+#epitafio-area{
+    background: rgb(95, 0, 0);
+    color: white;
+    font-family: 'Muli', sans-serif;
+}
+
+#epitafio-boton{
+    background: black;
+}

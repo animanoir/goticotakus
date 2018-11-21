@@ -18,10 +18,14 @@ session_start();
         <div class="row">
             <div class="col-md-6 centrar-div">
                 <div class="text-center">
+                    <img src="css/assets/miku.gif" alt="" >
+                </div>
+                <div class="text-center">
                     <h1 class="display-1 text-white"><span><b>G</b></span>ótic<span><b>o</b></span>takus</h1>
                 </div>
                 <!-- Aquí muestra algún aviso del registro. -->
                 <?php
+                    // Registro
                     if(isset($_SESSION['error'])){
                         echo $_SESSION['error'];
                         unset( $_SESSION['error']);
@@ -32,15 +36,20 @@ session_start();
                         echo $_SESSION['error_aliasDupli'];
                         unset( $_SESSION['error_aliasDupli']);
                     }
-                ?>
 
-                <?php
+                    // No se pudo iniciar sesión por alguna razón.
                     if(isset($_SESSION['login_fail'])){
                         echo $_SESSION['login_fail'];
                         unset( $_SESSION['login_fail']);
                     }
+                    // Primero debes iniciar sesión.
+                    if(isset($_SESSION['primeroLog'])){
+                        echo $_SESSION['primeroLog'];
+                        unset( $_SESSION['primeroLog']);
+                    }
                 ?>
-                <!-- Aquí se muestra algún aviso del login. -->
+                <!-- /Aquí se muestra algún aviso del login. -->
+
                 <form action="../php/_login.php" method="POST" class="px-4 py-3">
                     <div class="form-group">
                         <input type="text" class="form-control text-center" id="inicio-usuario" placeholder="Ingresa tu alias"
@@ -59,7 +68,7 @@ session_start();
             </div>
         </div>
     </div>
-    <?php require 'includes/footer.php'?>
+    <?php require_once 'includes/footer.php'?>
 
 </body>
 
