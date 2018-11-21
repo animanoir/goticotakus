@@ -34,7 +34,14 @@ if (isset($_POST['subir'])) {
             echo "ERROR";
         }
     }
-
+}else{
+    $_SESSION['avatar_error'] =
+    '<div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    Hubo un error.
+    </div>';
+    header('Location: ../home.php');
+    exit();
 }
 
 // // Path de la imagen

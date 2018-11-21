@@ -34,9 +34,14 @@ noLogeadoRedirect();
                 </div>
                 <?php
                 // Se cargó el avatar.
+                unset( $_FILES['avatar']);
+
                 if(isset($_SESSION['avatar_cargado'])){
                     echo $_SESSION['avatar_cargado'];
                     unset( $_SESSION['avatar_cargado']);
+                }elseif(isset($_SESSION['avatar_error'])){
+                    echo $_SESSION['avatar_error'];
+                    unset($_SESSION['avatar_error']);
                 }
                 ?>
                 <p class="text-white lead">Per aspera ad astra, <b>
@@ -44,12 +49,12 @@ noLogeadoRedirect();
 
                 <div class="py-1">
                     <i class="fas fa-skull-crossbones fa-lg text-white"></i>
-                    <a href="editarPerfil.php"> Hacerse cirugía plástica</a><br>
+                    <a class="login-link" href="editarPerfil.php"> Alterar ADN</a><br>
                 </div>
 
                 <div class="py-1">
                     <i class="fas fa-skull-crossbones fa-lg text-white"></i>
-                    <a href="php/_logout.php"> Cometer suicido</a><br>
+                    <a class="login-link" href="php/_logout.php"> Cometer suicido</a><br>
                 </div>
             </div>
             <div class="col-md-4">

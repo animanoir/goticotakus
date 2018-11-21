@@ -44,12 +44,12 @@ noLogeadoRedirect();
 
                 <div class="py-1">
                     <i class="fas fa-skull-crossbones fa-lg text-white"></i>
-                    <a href="home.php"> Regresar a casa</a><br>
+                    <a class="login-link" href="home.php"> Regresar a casa</a><br>
                 </div>
 
                 <div class="py-1">
                     <i class="fas fa-skull-crossbones fa-lg text-white"></i>
-                    <a href="php/_logout.php"> Cometer suicido</a><br>
+                    <a class="login-link" href="php/_logout.php"> Cometer suicido</a><br>
                 </div>
             </div>
 
@@ -58,7 +58,7 @@ noLogeadoRedirect();
                     <p class="text-white fuente-muli">
                         Selecciona un nuevo rostro <b>sólo .jpg</b>:
                     </p>
-                    <input class="form-control" type="file" name="avatar">
+                    <input class="form-control" type="file" name="avatar" required>
                     <div class="text-right py-2">
                     <button type="submit" class="btn btn-dark px-5" name="subir">Quiero dejar de ser feo</button>
                     </div>
