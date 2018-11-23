@@ -72,6 +72,7 @@ noLogeadoRedirect();
                     echo 
                         '<div class="card bg-dark text-white p-5 mb-3">
                             <img class="card-img-top" src="img/avatar_'.$epitafio['id_alias'].'.jpg" alt="nudes">
+                            <br>
                             <h4>ha dicho...</h4>
                             <br>
                             <p class="fuente-gotica">'.$epitafio['epitafio'].'</p>
