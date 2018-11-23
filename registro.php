@@ -1,6 +1,9 @@
 <?php 
     require_once 'php/_config.php';
+require_once 'php/_functions.php';
+
     session_start();
+    yaLogeado();
 ?>
 
 <!DOCTYPE html>

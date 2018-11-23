@@ -60,7 +60,7 @@ noLogeadoRedirect();
             <div class="col-md-4">
                 <form class="form-group" action="php/_publicar.php" method="post">
                     <textarea class="form-control" name="epitafio" id="epitafio-area" cols="30" rows="4"  placeholder="Escribe tus últimas palabras." required></textarea>
-                    <button id="epitafio-boton" class="form-control btn btn-dark" type="submit" name="publicar" >C A L L A R</button>
+                    <button  class="epitafio-boton form-control btn btn-dark" type="submit" name="publicar" >C A L L A R</button>
                 </form>
 
                 <?php

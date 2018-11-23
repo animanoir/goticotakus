@@ -17,12 +17,9 @@ if (isset($_GET['eliminar'])) {
         Ojalá en la vida real pudieras borras tus actos también.
         </div>';
         header("Location: ../../editarPerfil.php");
-        exit();
-    } else {
-
-        header("Location: ../../home.php");
-        exit();
-
+        // exit();
+    } elseif (isset($_POST['editar'])) {
+        Header('Location: ../../editarPost.php');
     }
 
     //No sé por qué pero ésto solucionó el warning.

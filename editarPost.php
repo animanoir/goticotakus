@@ -39,7 +39,7 @@ if (isset($_SESSION['avatar_cargado'])) {
     unset($_SESSION['avatar_cargado']);
 }
 ?>
-                <p class="text-white lead">Edita tu ADN, <b>
+                <p class="text-white lead">Edita tu post, <b>
                         <?php echo $_SESSION['alias'] ?></b>.</p>
 
                 <div class="py-1">
@@ -54,16 +54,7 @@ if (isset($_SESSION['avatar_cargado'])) {
             </div>
 
             <div class="col-md-6">
-                <form class="form-group" action="php/_subirImagen.php" method="post" enctype="multipart/form-data">
-                    <p class="text-white fuente-muli">
-                        Selecciona un nuevo rostro <b>sólo .jpg</b>:
-                    </p>
-                    <input class="form-control" type="file" name="avatar" required>
-                    <div class="text-right py-2">
-                        <button type="submit" class="btn btn-dark px-5" name="subir">Quiero dejar de ser feo</button>
-                    </div>
-                </form>
-                <hr>
+
 
                 <?php
                 if(isset($_SESSION['epitafio_borrado'])){
@@ -80,7 +71,7 @@ foreach ($sql_posts_id as $epitafio) {
 
     echo
         '
-                            <form  class="mb-4" type="get" action="php/_borrar.php">
+                            <form  class="mb-4" type="get" action="php/_guardarPost.php">
                                 <div class="card bg-dark text-white p-5">
                                     <br>
                                     <h4>has dicho...</h4>
@@ -88,9 +79,7 @@ foreach ($sql_posts_id as $epitafio) {
                                     <p class="fuente-gotica">' . $epitafio['epitafio'] . '</p>
                                 </div>
                                 <input type="hidden" name="pid" value="'.$epitafio['id'].'">
-                                <button class="form-control btn btn-danger epitafio-boton" type="submit" name="eliminar" >B O R R A R</button>
-                                <br>
-                                <button class="form-control btn btn-danger epitafio-boton" type="submit" name="editar" >E D I T A R</button>
+                                <button class="form-control btn btn-danger epitafio-boton" type="submit" name="eliminar" >G U A R D A R</button>
                             </form>
         ';
 }

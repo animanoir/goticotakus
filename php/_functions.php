@@ -12,5 +12,14 @@ function noLogeadoRedirect()
         header('Location: index.php');
         exit();
     }
-
 }
+
+function yaLogeado(){
+    if($_SESSION['loggedin']){
+        header('Location: home.php');
+        exit();
+    }
+}
+
+
+?>
