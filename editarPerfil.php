@@ -90,7 +90,7 @@ foreach ($sql_posts_id as $epitafio) {
                                 <input type="hidden" name="pid" value="'.$epitafio['id'].'">
                                 <button class="form-control btn btn-danger epitafio-boton" type="submit" name="eliminar" >B O R R A R</button>
                                 <br>
-                                <button class="form-control btn btn-danger epitafio-boton" type="submit" name="editar" >E D I T A R</button>
+                                <button class="form-control btn btn-danger epitafio-boton" type="submit" name="editar" disabled >E D I T A R</button>
                             </form>
         ';
 }

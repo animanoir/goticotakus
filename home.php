@@ -57,7 +57,7 @@ noLogeadoRedirect();
                     <a class="login-link" href="php/_logout.php"> Cometer suicido</a><br>
                 </div>
 
-                <div>
+                <div class="py-1">
                     <p class="text-white text-center">Tus aliados</p>
 
                     <ul class="list-group>">
