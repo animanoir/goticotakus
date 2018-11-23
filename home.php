@@ -56,11 +56,37 @@ noLogeadoRedirect();
                     <i class="fas fa-skull-crossbones fa-lg text-white"></i>
                     <a class="login-link" href="php/_logout.php"> Cometer suicido</a><br>
                 </div>
+
+                <div>
+                    <p class="text-white text-center">Tus aliados</p>
+
+                    <ul class="list-group>">
+                        <?php
+    $id_actual = $_SESSION['id'];
+    $amigos = mysqli_query($db_link, " SELECT * FROM amigos WHERE id_alias = '$id_actual' ");
+    
+    
+    foreach($amigos as $amigo){
+
+        // $nombreAmigo = mysqli_query($db_link, "SELECT * FROM usuarios WHERE id = '$amigo['id']' ");
+
+        echo '
+                <li class="list-group-item text-black">' .$amigo['id_amigo']. '</li>
+            ';
+    }
+    ?>
+                    </ul>
+
+
+                </div>
+
+
             </div>
             <div class="col-md-4">
                 <form class="form-group" action="php/_publicar.php" method="post">
-                    <textarea class="form-control" name="epitafio" id="epitafio-area" cols="30" rows="4"  placeholder="Escribe tus últimas palabras." required></textarea>
-                    <button  class="epitafio-boton form-control btn btn-dark" type="submit" name="publicar" >C A L L A R</button>
+                    <textarea class="form-control" name="epitafio" id="epitafio-area" cols="30" rows="4" placeholder="Escribe tus últimas palabras."
+                        required></textarea>
+                    <button class="epitafio-boton form-control btn btn-dark" type="submit" name="publicar">C A L L A R</button>
                 </form>
 
                 <?php
@@ -69,7 +95,7 @@ noLogeadoRedirect();
 
                 foreach($epitafios as $epitafio ){
 
-                    echo 
+                    echo
                         '<div class="card bg-dark text-white p-5 mb-3">
                             <img class="card-img-top" src="img/avatar_'.$epitafio['id_alias'].'.jpg" alt="nudes">
                             <br>
@@ -78,22 +104,31 @@ noLogeadoRedirect();
                             <p class="fuente-gotica">'.$epitafio['epitafio'].'</p>
                         </div>';
                 }
-
-
                 ?>
-
             </div>
             <div class="col-md-4">
-                <p class="text-white text-center">Tus enemigos</p>
+                <p class="text-white text-center">Todos</p>
+
+                <ul class="list-group>">
+                    <?php
+                    $aliases = mysqli_query($db_link, " SELECT * FROM usuarios ");
+                    foreach($aliases as $alias){
+                        echo '
+                                <li class="list-group-item text-black">' .$alias['alias']. ' -> ID: '.$alias['id'].'</li>
+
+                                <form action="php/_agregarAmigo.php" type="get">
+                                <input type="hidden" name="aid" value="'.$alias['id'].'">
+                                <button class="form-control btn btn-danger epitafio-boton mb-3" type="submit" name="agregar_amigo" >Agregar aliado</button>
+                                </form>
+
+                            ';
+                    }
+                    ?>
+                </ul>
             </div>
         </div>
 
     </div>
-
-
-
-
-
 
     <?php require 'includes/footer.php'?>
 

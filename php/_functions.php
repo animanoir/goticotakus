@@ -14,12 +14,12 @@ function noLogeadoRedirect()
     }
 }
 
-function yaLogeado(){
-    if($_SESSION['loggedin']){
-        header('Location: home.php');
-        exit();
-    }
-}
+// function yaLogeado(){
+//     if($_SESSION['loggedin']){
+//         header('Location: home.php');
+//         exit();
+//     }
+// }
 
 
 ?>
