@@ -25,6 +25,7 @@ if (isset($_GET['eliminar'])) {
 
     }
 
+    //No sé por qué pero ésto solucionó el warning.
     ob_end_flush();
 
 }
