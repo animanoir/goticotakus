@@ -35,3 +35,12 @@ body {
 .fuente-muli {
     font-family: 'Muli', sans-serif;
 }
+
+img{
+    color: red;
+}
+
+.fuente-gotica{
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 1.5rem;
+}

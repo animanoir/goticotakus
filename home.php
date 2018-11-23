@@ -30,7 +30,7 @@ noLogeadoRedirect();
         <div class="row py-4">
             <div class="col-md-4">
                 <div class="py-2">
-                    <img src="img/<?php echo $_SESSION['avatar_img'] ?>" class="img-fluid" src="" alt="Foto de perfil">
+                    <img src="img/<?php echo $_SESSION['avatar_img'] ?>" class="img-fluid" src="" alt="Actualmente no tienes ROSTRO. Se te ve el CRÁNEO.">
                 </div>
                 <?php
                 // Se cargó el avatar.
@@ -58,10 +58,29 @@ noLogeadoRedirect();
                 </div>
             </div>
             <div class="col-md-4">
-                <form class="form-group" action="" method="post">
-                    <textarea class="form-control" name="epitafio" id="epitafio-area" cols="30" rows="4" placeholder="Escribe tus últimas palabras."></textarea>
-                    <button id="epitafio-boton" class="form-control btn btn-dark" type="submit">C A L L A R</button>
+                <form class="form-group" action="php/_publicar.php" method="post">
+                    <textarea class="form-control" name="epitafio" id="epitafio-area" cols="30" rows="4"  placeholder="Escribe tus últimas palabras." required></textarea>
+                    <button id="epitafio-boton" class="form-control btn btn-dark" type="submit" name="publicar" >C A L L A R</button>
                 </form>
+
+                <?php
+                $epitafios = mysqli_query($db_link, "SELECT * FROM epitafios ORDER BY id DESC");
+                $quienes = mysqli_query($db_link, "SELECT * FROM usuarios");
+
+                foreach($epitafios as $epitafio ){
+
+                    echo 
+                        '<div class="card bg-dark text-white p-5 mb-3">
+                            <img class="card-img-top" src="img/avatar_'.$epitafio['id_alias'].'.jpg" alt="nudes">
+                            <h4>ha dicho...</h4>
+                            <br>
+                            <p class="fuente-gotica">'.$epitafio['epitafio'].'</p>
+                        </div>';
+                }
+
+
+                ?>
+
             </div>
             <div class="col-md-4">
                 <p class="text-white text-center">Tus enemigos</p>

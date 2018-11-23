@@ -30,7 +30,7 @@ noLogeadoRedirect();
         <div class="fuente-muli row py-4">
         <div class="col-md-4">
                 <div class="py-2">
-                    <img src="img/<?php echo $_SESSION['avatar_img'] ?>" class="img-fluid" src="" alt="Foto de perfil">
+                    <img src="img/<?php echo $_SESSION['avatar_img'] ?>" class="img-fluid" src="" alt="Tu calavera es atractiva.">
                 </div>
                 <?php
                 // Se cargó el avatar.
