@@ -77,6 +77,18 @@ noLogeadoRedirect();
     ?>
                     </ul>
 
+                    <p class="text-white">Tus posts favoritos</p>
+                    <?php
+
+                                    $id_actual = $_SESSION['id'];
+                                    $posts_favoritos = mysqli_query($db_link, " SELECT * FROM likes  WHERE alias_id = '$id_actual' ");
+                                    
+                                    $row = mysqli_fetch_array($posts_favoritos, MYSQLI_ASSOC); // LEEMOS EL CONTENIDO DEL OBJETO DE MYSQL 
+
+                                    
+                                    
+                    ?>
+
 
                 </div>
 
@@ -88,6 +100,11 @@ noLogeadoRedirect();
                         required></textarea>
                     <button class="epitafio-boton form-control btn btn-dark" type="submit" name="publicar">C A L L A R</button>
                 </form>
+
+                <hr>
+
+                <div class="lead text-white text-center">T I M E L I N E</div>
+                <br>
 
                 <?php
                 $epitafios = mysqli_query($db_link, "SELECT * FROM epitafios ORDER BY id DESC");
@@ -102,6 +119,11 @@ noLogeadoRedirect();
                             <h4>ha dicho...</h4>
                             <br>
                             <p class="fuente-gotica">'.$epitafio['epitafio'].'</p>
+                            <br>
+                            <form type="GET" action="php/_favorito.php">
+                            <input type="hidden" name="id_post" value="'.$epitafio['id'].'">
+                                <button type="submit" class="favorito text-right fas fa-heart fa-2x" name="megusta">Favorito </i>
+                            </form>
                         </div>';
                 }
                 ?>

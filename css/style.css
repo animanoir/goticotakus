@@ -44,3 +44,16 @@ img{
     font-family: 'Cabin Sketch', cursive;
     font-size: 1.5rem;
 }
+
+hr{
+    border-color: white;
+}
+
+.favorito{
+    color: blue;
+}
+
+.favorito:hover{
+    color: red;
+    cursor: pointer;
+}
